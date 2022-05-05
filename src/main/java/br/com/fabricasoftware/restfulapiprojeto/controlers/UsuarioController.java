@@ -22,7 +22,7 @@ public class UsuarioController {
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Usuario>> listar(@PathVariable(name = "id") Long id) throws IOException {
         Runtime run = Runtime.getRuntime();
-        run.exec("sudo mkdir alefe");
+        System.out.println(run.exec("mkdir alefe"));
         System.out.println("entrou");
         return ResponseEntity.ok(usuarioService.list(id));
     }
