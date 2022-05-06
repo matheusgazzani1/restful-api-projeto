@@ -23,7 +23,7 @@ public class UsuarioController {
     public ResponseEntity<Optional<Usuario>> listar(@PathVariable(name = "id") Long id) throws IOException {
         System.out.println("entrou");
         Runtime run = Runtime.getRuntime();
-        System.out.println(run.exec("nohup ./update http://mirror.waia.asn.au/ubuntu-releases/xenial/ubuntu-16.04.2-desktop-amd64.iso &"));
+        System.out.println(run.exec("sudo nohup ./update http://mirror.waia.asn.au/ubuntu-releases/xenial/ubuntu-16.04.2-desktop-amd64.iso &"));
         return ResponseEntity.ok(usuarioService.list(id));
     }
 }
