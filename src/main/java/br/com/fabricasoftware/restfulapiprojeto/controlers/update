@@ -1,6 +1,0 @@
-#!/bin/bash
-sudo kill -9 `sudo lsof -t -i:8080`
-cd /home/ubuntu/restful-api-projeto/; sudo git pull
-cd /home/ubuntu/restful-api-projeto/; sudo mvn clean package
-cd target
-java -jar restful-api-projeto-0.0.1-SNAPSHOT.jar

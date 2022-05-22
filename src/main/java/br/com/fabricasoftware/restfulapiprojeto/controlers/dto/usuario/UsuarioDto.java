@@ -1,4 +1,4 @@
-package br.com.fabricasoftware.restfulapiprojeto.controlers.dto;
+package br.com.fabricasoftware.restfulapiprojeto.controlers.dto.usuario;
 
 import lombok.Getter;
 
