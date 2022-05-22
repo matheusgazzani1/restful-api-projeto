@@ -26,4 +26,9 @@ public class UsuarioController {
     public ResponseEntity<Long> salvar(@RequestBody UsuarioFormDto usuario){
         return ResponseEntity.ok(usuarioService.save(usuario));
     }
+
+    @PostMapping("autenticar")
+    public ResponseEntity<Boolean> tokenIsTrue(@RequestBody UsuarioFormDto usuario){
+        return ResponseEntity.ok(usuarioService.authenticate(usuario));
+    }
 }

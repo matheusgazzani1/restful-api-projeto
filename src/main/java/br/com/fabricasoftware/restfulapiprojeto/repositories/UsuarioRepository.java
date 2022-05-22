@@ -18,4 +18,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
             "AND (usuario.id <> :id OR :id IS NULL)")
     Boolean existEmail(@Param(value = "email") String email, @Param(value="id") Long id);
 
+
+    @Query("SELECT u FROM Usuario u " +
+            "WHERE (u.email = :email) " +
+            "AND (u.senha = :senha)")
+    Usuario existUser(String email, String senha);
+
 }

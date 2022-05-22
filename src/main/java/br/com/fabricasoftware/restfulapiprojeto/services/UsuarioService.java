@@ -23,4 +23,12 @@ public class UsuarioService {
 
         return usuarioRepository.save(usuarioSave).getId();
     }
+
+    public Boolean authenticate(UsuarioFormDto usuario){
+
+        if(usuarioRepository.existUser(usuario.getEmail(), usuario.getSenha()) != null){
+            return true;
+        }
+        return false;
+    }
 }
